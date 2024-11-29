@@ -1,0 +1,28 @@
+{
+  "name": "kelp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "consumer": "node ./consumer/index.js",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "fs": "^0.0.1-security",
+    "kafkajs": "^2.2.4",
+    "pg": "^8.13.1",
+    "sequelize": "^6.37.5",
+    "sinon": "^19.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
