@@ -43,7 +43,8 @@ Before you start, make sure you have the following tools and dependencies instal
 7. API Endpoint:
 
    ```bash
-   POST /api/user: This is the main endpoint where user data (e.g., name, age) is submitted. The API responds immediately, while the data is asynchronously processed and stored in PostgreSQL.
+   POST /api/user: This is the main endpoint where data is asynchronously processed and stored in PostgreSQL.can create a separate API to check user data
+   
 
 
 ##  Features
@@ -53,6 +54,7 @@ Before you start, make sure you have the following tools and dependencies instal
    
 ##  Considerations
 1. Scalability: Kafka is used to handle high-throughput data processing, making the system scalable and efficient for a large number of requests.
-2. Error Handling: All validation errors are captured and stored in an array for later review or logging.
-3. Database Indexing: To prevent duplicate entries in the database, we have added an index on the name and age fields. This can be extended to other fields if required.
-4. Instead of calculating the age group distribution at runtime, use a query to fetch the distribution directly from the database.
+2. You can use a separate API to check the status of the operation and retrieve the user data.
+3. Error Handling: All validation errors are captured and stored in an array for later review or logging.
+4. Database Indexing: To prevent duplicate entries in the database, we have added an index on the name and age fields. This can be extended to other fields if required.
+5. Instead of calculating the age group distribution at runtime, use a query to fetch the distribution directly from the database.
