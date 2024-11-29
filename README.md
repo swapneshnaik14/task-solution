@@ -55,3 +55,4 @@ Before you start, make sure you have the following tools and dependencies instal
 1. Scalability: Kafka is used to handle high-throughput data processing, making the system scalable and efficient for a large number of requests.
 2. Error Handling: All validation errors are captured and stored in an array for later review or logging.
 3. Database Indexing: To prevent duplicate entries in the database, we have added an index on the name and age fields. This can be extended to other fields if required.
+4. Instead of calculating the age group distribution at runtime, use a query to fetch the distribution directly from the database.
