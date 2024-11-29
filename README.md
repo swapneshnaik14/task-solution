@@ -34,10 +34,13 @@ Before you start, make sure you have the following tools and dependencies instal
    ```bash
    ./run.local.sh
 5. Start the consumer service to process data asynchronously:
-
    ```bash
    npm start consumer
-6. API Endpoint:
+6. Run test cases 
+   ```bash
+   npm run test
+
+7. API Endpoint:
 
    ```bash
    POST /api/user: This is the main endpoint where user data (e.g., name, age) is submitted. The API responds immediately, while the data is asynchronously processed and stored in PostgreSQL.
