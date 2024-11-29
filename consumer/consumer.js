@@ -85,7 +85,7 @@ const processCSVFile = (filePath) => {
 const runConsumer = async () => {
   await consumer.connect(); // Connect the Kafka consumer
   console.log("Consumer connected");
-  await consumer.subscribe({ topic: "user-create", fromBeginning: true }); // Subscribe to the 'user-create' topic
+  await consumer.subscribe({ topic:  process.env.KAFKA_TOPIC || 'user-create', fromBeginning: true }); // Subscribe to the 'user-create' topic
 
   // Define the logic for handling each incoming Kafka message
   await consumer.run({

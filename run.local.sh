@@ -1,7 +1,9 @@
-export CSV_FILE_PATH=../csv/sample.csv
-export PORT=3000
-export DB_HOST=localhost
-export DB_USERNAME=postgres
-export DB_PASSWORD=Swapnesh@14
-export DB_NAME=user
+KAFKA_BROKER=localhost:9092
+KAFKA_TOPIC=your_topic_name
+CSV_FILE_PATH=../csv/sample.csv
+PORT=3000
+DB_HOST=localhost
+DB_USERNAME=postgres
+DB_PASSWORD=Swapnesh@14
+DB_NAME=user
 npm start
