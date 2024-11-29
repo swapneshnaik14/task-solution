@@ -20,16 +20,24 @@ Before you start, make sure you have the following tools and dependencies instal
    ```bash
    npm install
 2. Ensure Kafka is installed and started on your machine.
-
-3. Run the local setup script to configure your environment:
+3. define the necessary environment variables in env and run.local.sh
+   ```bash
+   KAFKA_BROKER=localhost:9092
+   KAFKA_TOPIC=your_topic_name
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_NAME=your_db_name
+   DB_USER=your_db_user
+   DB_PASSWORD=your_db_password
+4. Run the local setup script to configure your environment:
 
    ```bash
    ./run.local.sh
-4. Start the consumer service to process data asynchronously:
+5. Start the consumer service to process data asynchronously:
 
    ```bash
    npm start consumer
-4. API Endpoint:
+6. API Endpoint:
 
    ```bash
    POST /api/user: This is the main endpoint where user data (e.g., name, age) is submitted. The API responds immediately, while the data is asynchronously processed and stored in PostgreSQL.
