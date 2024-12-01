@@ -44,7 +44,7 @@ Before you start, make sure you have the following tools and dependencies instal
 
    ```bash
    POST /api/user: This is the main endpoint where data is asynchronously processed and stored in PostgreSQL.can create a separate API to check user data
-   GET /api/user/status/slug: Endpoint to check whether the user's status has been processed or completed.
+   GET /api/user/status/:slug: Endpoint to check whether the user's status has been processed or completed.
    
 
 
