@@ -6,6 +6,7 @@ const { createConsumer } = require("../app/kafka.init");
 const { createUsersInBatch } = require("../app/service/user.service");
 const { parseCSVRow } = require("../app/utils/user.utils");
 const sequelize = require("../app/postgres.init");
+const UserProcessingStatus = require('../app/model/user_add_status.model');
 
 // Initialize Kafka consumer with group 'test-group'
 const consumer = createConsumer("test-group");
@@ -87,7 +88,7 @@ const runConsumer = async () => {
   console.log("Consumer connected");
   await consumer.subscribe({ topic:  process.env.KAFKA_TOPIC || 'user-create', fromBeginning: true }); // Subscribe to the 'user-create' topic
 
-  // Define the logic for handling each incoming Kafka message
+  //logic for handling each incoming Kafka message
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
       try {
@@ -97,6 +98,13 @@ const runConsumer = async () => {
 
         // Process the CSV file and handle errors
         const result = await processCSVFile(filePath);
+
+        const fileName = parsedMessage.pathToCsv.split('/').pop();
+        const slug = fileName.split('.')[0]
+        await UserProcessingStatus.update(
+          { status: 'COMPLETED' },
+          { where: { slug: slug } }
+        );
 
         // Run a SQL query to get the distribution of users across different age groups
         const [ageGroupPercentages] = await sequelize.query(`
