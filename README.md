@@ -44,6 +44,7 @@ Before you start, make sure you have the following tools and dependencies instal
 
    ```bash
    POST /api/user: This is the main endpoint where data is asynchronously processed and stored in PostgreSQL.can create a separate API to check user data
+   GET /api/user/status/slug: Endpoint to check whether the user's status has been processed or completed.
    
 
 
@@ -58,3 +59,11 @@ Before you start, make sure you have the following tools and dependencies instal
 3. Error Handling: All validation errors are captured and stored in an array for later review or logging.
 4. Database Indexing: To prevent duplicate entries in the database, we have added an index on the name and age fields. This can be extended to other fields if required.
 5. Instead of calculating the age group distribution at runtime, use a query to fetch the distribution directly from the database.
+
+<img width="852" alt="image" src="https://github.com/user-attachments/assets/66ecb548-05d3-4a09-8c02-76e67e326a2f">
+
+<img width="636" alt="image" src="https://github.com/user-attachments/assets/7d5b388b-c0dd-4c7b-81f8-27754160c61b">
+
+
+<img width="485" alt="image" src="https://github.com/user-attachments/assets/6e656cc2-15c5-4174-8db9-ad255bdb1fc9">
+
